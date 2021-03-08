@@ -27,7 +27,7 @@ namespace TheDebtBook.ViewModels
 
         public void CloseHandler()
         {
-            Application.Current.Shutdown();
+            Application.Current.Windows[Application.Current.Windows.Count-1].Close();
         }
 
         public ICommand AddValueCommand
@@ -43,9 +43,10 @@ namespace TheDebtBook.ViewModels
 
         }
 
-
         public UpdateDebtViewModel()
         {
+            UpdateDebtList = new ObservableCollection<Debts>();
+            //UpdateDebtList.Add(new Debts(-55));
         }
 
 

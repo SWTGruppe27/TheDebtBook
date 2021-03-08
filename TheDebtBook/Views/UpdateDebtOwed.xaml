@@ -7,6 +7,9 @@
         xmlns:viewModels="clr-namespace:TheDebtBook.ViewModels"
         mc:Ignorable="d"
         Title="Update Debt Owed" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModels:UpdateDebtViewModel></viewModels:UpdateDebtViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -22,7 +25,12 @@
 
         <DataGrid Grid.Row="1"
                   IsSynchronizedWithCurrentItem="True"
-                  ItemsSource="{Binding Path=UpdateDebtList}">
+                  ItemsSource="{Binding Path=UpdateDebtList}"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Path=Date}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Value" Binding="{Binding Path=Value}"></DataGridTextColumn>
+            </DataGrid.Columns>
         </DataGrid>
 
         <Button Grid.Row="2" Content="Close" Margin="5,5"

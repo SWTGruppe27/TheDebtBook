@@ -73,7 +73,7 @@ namespace TheDebtBook.ViewModels
             UpdateDebtOwed updateDebtOwed = new UpdateDebtOwed();
 
             updateDebtOwed.ShowDialog();
-            _updateDebtViewModel.UpdateDebtList = Debtors.ElementAt(CurrentIndex).DebtsList;
+            _updateDebtViewModel.UpdateDebtList = Debtors.ElementAt(1).DebtsList;
         }
 
         private UpdateDebtViewModel _updateDebtViewModel;
@@ -86,7 +86,7 @@ namespace TheDebtBook.ViewModels
             Debtors.Add(new Debtor("Simon Bjermand Kjær", -3000.5));
             Debtors.Add(new Debtor("Simon Schou Jensen", -10000.7));
 
-            Debtors.ElementAt(0).DebtsList.Add(new Debts("08.03.2021", -500));
+            Debtors.ElementAt(0).DebtsList.Add(new Debts(-500));
         }
 
     }
