@@ -29,7 +29,7 @@
 
 
         <Button Grid.Row="3" Content="Ok" Width="35"></Button>
-        <Button Grid.Row="3" Grid.Column="1" Content="Cancle" Width="40"></Button>
+        <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Width="45"></Button>
 
     </Grid>
 </Window>
