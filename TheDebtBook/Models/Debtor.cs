@@ -3,20 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Prism.Mvvm;
 
 namespace TheDebtBook.Models
 {
-    public class Debtor : INotifyPropertyChanged
+    public class Debtor : BindableBase
     {
         private string fullName;
         private double moneyOwed;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void Notify([CallerMemberName] string propName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
 
         public Debtor()
         {
@@ -37,21 +31,19 @@ namespace TheDebtBook.Models
             }
             set
             {
-                fullName = value;
-                Notify("Full Name");
+                SetProperty(ref fullName,value);
             }
         }
 
-        public string MoneyOwed
+        public double MoneyOwed
         {
             get
             {
-                return Convert.ToString(moneyOwed);
+                return moneyOwed;
             }
             set
             {
-                moneyOwed = double.Parse(value);
-                Notify("Money Owed");
+                SetProperty(ref moneyOwed, value);
             }
         }
     }
