@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TheDebtBook.Models;
+using TheDebtBook.ViewModels;
 
 namespace TheDebtBook.Views
 {
@@ -18,19 +19,9 @@ namespace TheDebtBook.Views
     /// </summary>
     public partial class AddDebtor : Window
     {
-        private Debtor _addDebtor;
-        public AddDebtor()
+        public AddDebtor(DeptBookViewModel)
         {
             InitializeComponent();
-            _addDebtor = new Debtor("", 0);
-        }
-
-        public Debtor AddNewDebtor
-        {
-            get
-            {
-                return _addDebtor;
-            }
         }
     }
 }
