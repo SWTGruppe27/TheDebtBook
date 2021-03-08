@@ -16,11 +16,13 @@ namespace TheDebtBook.Views
 {
     public partial class AddDebtor : Window
     {
-        private DebtBookViewModel debtBookViewModel;
+        private AddDebtorViewModel _addDebtorViewModel;
         private Debtor _addDebtor;
-        public AddDebtor()
+        public AddDebtor(DebtBookViewModel debtBookViewModel)
         {
             InitializeComponent();
+            _addDebtorViewModel = new AddDebtorViewModel(debtBookViewModel);
+            DataContext = _addDebtorViewModel;
         }
     }
 }

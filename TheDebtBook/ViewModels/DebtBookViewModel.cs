@@ -13,7 +13,7 @@ using TheDebtBook.Views;
 
 namespace TheDebtBook.ViewModels
 {
-    class DebtBookViewModel : BindableBase
+    public class DebtBookViewModel : BindableBase
     {
         public ObservableCollection<Debtor> Debtors { get; set; }
 
@@ -54,7 +54,6 @@ namespace TheDebtBook.ViewModels
             AddDebtor addDebtor = new AddDebtor(this);
 
             addDebtor.ShowDialog();
-            Debtors.Add(new Debtor("", 0));
             CurrentIndex = Debtors.Count - 1;
         }
 
