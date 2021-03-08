@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
@@ -10,6 +12,8 @@ namespace TheDebtBook.ViewModels
 {
     public class UpdateDebtViewModel : BindableBase
     {
+        public ObservableCollection<Debts> UpdateDebtList { get; set; }
+
         private ICommand _closeCommand;
         private ICommand _addValueCommand;
 
