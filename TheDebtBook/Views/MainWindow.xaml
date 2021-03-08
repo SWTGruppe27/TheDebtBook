@@ -28,6 +28,13 @@
                   ItemsSource="{Binding Path=Debtors}"
                   SelectedItem="{Binding Path=CurrentDebtor}"
                   SelectedIndex="{Binding Path=CurrentIndex}" >
+            <DataGrid.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick" 
+                              Command="{Binding Path=EditDebtCommand}">
+
+                </MouseBinding>
+            </DataGrid.InputBindings>
+
         </DataGrid>
 
         <Button Grid.Row="1" Grid.Column="1" Content="Add" 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Prism.Commands;
@@ -39,8 +40,6 @@ namespace TheDebtBook.ViewModels
             }
         }
 
-
-
         private ICommand _addNewCommand;
         public ICommand AddNewCommand
         {
@@ -59,8 +58,29 @@ namespace TheDebtBook.ViewModels
             CurrentIndex = Debtors.Count - 1;
         }
 
+        private ICommand _editDebt;
+
+        public ICommand EditDebtCommand
+        {
+            get
+            {
+                return _editDebt ??= (new DelegateCommand(EditDebtHandler));
+            }
+        }
+
+        public void EditDebtHandler()
+        {
+            UpdateDebtOwed updateDebtOwed = new UpdateDebtOwed();
+
+            updateDebtOwed.ShowDialog();
+            _updateDebtViewModel.UpdateDebtList = Debtors.ElementAt(CurrentIndex).DebtsList;
+        }
+
+        private UpdateDebtViewModel _updateDebtViewModel;
         public DebtBookViewModel()
         {
+            _updateDebtViewModel = new UpdateDebtViewModel();
+
             Debtors = new ObservableCollection<Debtor>();
             Debtors.Add(new Debtor("Kathrine Alroee", 1000.4));
             Debtors.Add(new Debtor("Simon Bjerremand Kjær", -3000.5));

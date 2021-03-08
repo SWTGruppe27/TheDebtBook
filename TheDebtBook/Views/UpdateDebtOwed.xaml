@@ -24,8 +24,7 @@
 
         <DataGrid Grid.Row="1"
                   IsSynchronizedWithCurrentItem="True"
-                  >
-            
+                  ItemsSource="{Binding Path=DebtsList}">
         </DataGrid>
 
         <Button Grid.Row="2" Content="Close" Margin="5,5"
