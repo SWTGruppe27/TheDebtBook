@@ -14,9 +14,9 @@ namespace TheDebtBook
         {
         }
 
-        public Debts(string date, double value)
+        public Debts(double value)
         {
-            _date = date;
+            _date = DateTime.Now.ToLongDateString();
             _value = value;
         }
 
