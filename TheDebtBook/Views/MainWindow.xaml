@@ -27,7 +27,7 @@
                   IsSynchronizedWithCurrentItem="True"
                   ItemsSource="{Binding Path=Debtors}"
                   SelectedItem="{Binding Path=CurrentDebtor}"
-                  SelectedIndex="{Binding Path=CurrentIndex}" SelectionChanged="DataGrid_SelectionChanged">
+                  SelectedIndex="{Binding Path=CurrentIndex}" >
         </DataGrid>
 
         <Button Grid.Row="1" Grid.Column="1" Content="Add" 

@@ -6,10 +6,37 @@
         xmlns:local="clr-namespace:TheDebtBook.Views"
         mc:Ignorable="d"
         Title="Update Debt Owed" Height="450" Width="800">
+    <Window.DataContext>
+        <local:UpdateDebtOwed></local:UpdateDebtOwed>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Update debt" Margin="5,0"></Label>
+
+        <DataGrid Grid.Row="1"
+                  IsSynchronizedWithCurrentItem="True"
+                  >
+            
+        </DataGrid>
+
+        <Button Grid.Row="2" Content="Close" Margin="5,5"
+                Command="{Binding Path=CloseCommand}">
+
+        </Button>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBox  Margin="5,5"></TextBox>
+            <Button Margin="5,5 " Content="Add value"></Button>
+        </StackPanel>
+
     </Grid>
 </Window>

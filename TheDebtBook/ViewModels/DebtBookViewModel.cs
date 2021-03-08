@@ -39,6 +39,8 @@ namespace TheDebtBook.ViewModels
             }
         }
 
+
+
         private ICommand _addNewCommand;
         public ICommand AddNewCommand
         {
