@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -9,12 +10,12 @@ namespace TheDebtBook.Models
 {
     public class Debtor : BindableBase
     {
+        public ObservableCollection<Debts> DebtsList { get; }
         private string fullName;
         private double moneyOwed;
 
         public Debtor()
         {
-
         }
 
         public Debtor(string dFullName, double dMoneyOwed)
