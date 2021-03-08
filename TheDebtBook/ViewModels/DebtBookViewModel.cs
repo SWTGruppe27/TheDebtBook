@@ -51,7 +51,7 @@ namespace TheDebtBook.ViewModels
 
         void AddNewHandler()
         {
-            AddDebtor addDebtor = new AddDebtor();
+            AddDebtor addDebtor = new AddDebtor(this);
 
             addDebtor.ShowDialog();
             Debtors.Add(new Debtor("", 0));

@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheDebtBook.Views"
+        xmlns:viewModels="clr-namespace:TheDebtBook.ViewModels"
         mc:Ignorable="d"
         Title="Add New Debtor" Height="450" Width="800"
         WindowStartupLocation="CenterOwner">
+    <Window.DataContext>
+        <viewModels:AddDebtorViewModel></viewModels:AddDebtorViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -22,14 +26,14 @@
         <Label Content="Add debtor" Margin="5,0"></Label>
 
         <Label Grid.Row="1" Content="Full name: " Margin="5,0"></Label>
-        <TextBox Grid.Row="1" Grid.Column="1" MinWidth="200"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" MinWidth="200" Text="{Binding Path=AddNewDebtor.FullName}"></TextBox>
 
         <Label Grid.Row="2" Content="Owed money: " Margin="5,0"></Label>
-        <TextBox Grid.Row="2" Grid.Column="1" MinWidth="200"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" MinWidth="200" Text="{Binding Path=AddNewDebtor.MoneyOwed}"></TextBox>
 
 
         <Button Grid.Row="3" Content="Ok" Width="35"></Button>
-        <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Width="45"></Button>
+        <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Width="45" Command="{Binding Path=CancelCommand}"></Button>
 
     </Grid>
 </Window>

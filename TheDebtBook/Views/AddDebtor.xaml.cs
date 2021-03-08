@@ -21,15 +21,6 @@ namespace TheDebtBook.Views
         public AddDebtor()
         {
             InitializeComponent();
-            _addDebtor = new Debtor("", 0);
-        }
-
-        public Debtor AddNewDebtor
-        {
-            get
-            {
-                return _addDebtor;
-            }
         }
     }
 }

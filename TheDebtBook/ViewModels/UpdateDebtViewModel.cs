@@ -27,7 +27,7 @@ namespace TheDebtBook.ViewModels
 
         public void CloseHandler()
         {
-            Application.Current.Windows[Application.Current.Windows.Count-1].Close();
+            Application.Current.Windows[Application.Current.Windows.Count-2].Close();
         }
 
         public ICommand AddValueCommand
