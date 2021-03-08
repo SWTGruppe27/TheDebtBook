@@ -10,7 +10,7 @@ namespace TheDebtBook.Models
 {
     public class Debtor : BindableBase
     {
-        public ObservableCollection<Debts> DebtsList { get; }
+        public ObservableCollection<Debts> DebtsList { get; set; }
         private string fullName;
         private double moneyOwed;
 
@@ -22,6 +22,7 @@ namespace TheDebtBook.Models
         {
             fullName = dFullName;
             moneyOwed = dMoneyOwed;
+            DebtsList = new ObservableCollection<Debts>();
         }
 
         public string FullName

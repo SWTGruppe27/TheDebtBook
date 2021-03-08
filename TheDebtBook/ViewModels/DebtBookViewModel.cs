@@ -15,7 +15,7 @@ namespace TheDebtBook.ViewModels
 {
     class DebtBookViewModel : BindableBase
     {
-        public ObservableCollection<Debtor> Debtors { get; }
+        public ObservableCollection<Debtor> Debtors { get; set; }
 
         private Debtor currentDebtor = null;
         public Debtor CurrentDebtor
@@ -83,8 +83,10 @@ namespace TheDebtBook.ViewModels
 
             Debtors = new ObservableCollection<Debtor>();
             Debtors.Add(new Debtor("Kathrine Alroee", 1000.4));
-            Debtors.Add(new Debtor("Simon Bjerremand Kjær", -3000.5));
+            Debtors.Add(new Debtor("Simon Bjermand Kjær", -3000.5));
             Debtors.Add(new Debtor("Simon Schou Jensen", -10000.7));
+
+            Debtors.ElementAt(0).DebtsList.Add(new Debts("08.03.2021", -500));
         }
 
     }

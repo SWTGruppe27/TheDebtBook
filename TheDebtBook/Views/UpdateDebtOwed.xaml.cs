@@ -20,6 +20,7 @@ namespace TheDebtBook.Views
         public UpdateDebtOwed()
         {
             InitializeComponent();
+
         }
     }
 }

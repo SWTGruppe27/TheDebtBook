@@ -27,18 +27,24 @@
                   IsSynchronizedWithCurrentItem="True"
                   ItemsSource="{Binding Path=Debtors}"
                   SelectedItem="{Binding Path=CurrentDebtor}"
-                  SelectedIndex="{Binding Path=CurrentIndex}" >
+                  SelectedIndex="{Binding Path=CurrentIndex}" 
+                  AutoGenerateColumns="False">
             <DataGrid.InputBindings>
                 <MouseBinding MouseAction="LeftDoubleClick" 
                               Command="{Binding Path=EditDebtCommand}">
-
                 </MouseBinding>
             </DataGrid.InputBindings>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Full name" Binding="{Binding Path=FullName}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="Debt" Binding="{Binding Path=MoneyOwed}" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
 
         </DataGrid>
 
         <Button Grid.Row="1" Grid.Column="1" Content="Add" 
                 Margin="5,0"
+                MaxHeight="25"
+                VerticalAlignment="Top"
                 Command="{Binding Path=AddNewCommand}">
         </Button>
 
