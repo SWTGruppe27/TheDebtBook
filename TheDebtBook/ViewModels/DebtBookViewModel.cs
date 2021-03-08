@@ -61,6 +61,8 @@ namespace TheDebtBook.ViewModels
         {
             Debtors = new ObservableCollection<Debtor>();
             Debtors.Add(new Debtor("Kathrine Alroee", 1000.4));
+            Debtors.Add(new Debtor("Simon Bjerremand Kjær", -3000.5));
+            Debtors.Add(new Debtor("Simon Schou Jensen", -10000.7));
         }
 
     }
