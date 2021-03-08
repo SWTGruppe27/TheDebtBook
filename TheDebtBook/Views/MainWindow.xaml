@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="The Debt Book" Height="450" Width="800">
     <Window.DataContext>
-        <local:MainWindow></local:MainWindow>
+        <viewModels:DebtBookViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
