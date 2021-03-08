@@ -20,7 +20,6 @@ namespace TheDebtBook.Views
         private Debtor _addDebtor;
         public AddDebtor(DebtBookViewModel debtBookViewModel)
         {
-            _debtBookViewModel = debtBookViewModel;
             InitializeComponent();
             _addDebtorViewModel = new AddDebtorViewModel(debtBookViewModel);
             DataContext = _addDebtorViewModel;
