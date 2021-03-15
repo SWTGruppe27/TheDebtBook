@@ -58,7 +58,7 @@ namespace TheDebtBook.ViewModels
         public AddDebtorViewModel(DebtBookViewModel debtBookViewModel)
         {
             _debtBookViewModel = debtBookViewModel;
-            _addDebtor = new Debtor("", 0);
+            _addDebtor = new Debtor("");
 
         }
 

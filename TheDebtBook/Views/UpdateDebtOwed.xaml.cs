@@ -9,18 +9,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TheDebtBook.ViewModels;
 
 namespace TheDebtBook.Views
 {
-    /// <summary>
-    /// Interaction logic for UpdateDebtOwed.xaml
-    /// </summary>
     public partial class UpdateDebtOwed : Window
     {
-        public UpdateDebtOwed()
+        private UpdateDebtViewModel _updateDebtViewModel;
+        public UpdateDebtOwed(DebtBookViewModel model)
         {
             InitializeComponent();
-
+            _updateDebtViewModel = new UpdateDebtViewModel(model);
+            DataContext = _updateDebtViewModel;
         }
     }
 }

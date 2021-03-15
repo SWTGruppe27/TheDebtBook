@@ -1,21 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using Prism.Commands;
 using Prism.Mvvm;
+using TheDebtBook.Models;
 
 namespace TheDebtBook.ViewModels
 {
     public class UpdateDebtViewModel : BindableBase
     {
-        public ObservableCollection<Debts> UpdateDebtList { get; set; }
-
+        public Debtor CurrentDebtor { get; private set; }
+        private DebtBookViewModel _debtBookViewModel;
+        private int _value;
         private ICommand _closeCommand;
         private ICommand _addValueCommand;
+
+        public int Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                SetProperty(ref _value, value);
+            }
+        }
 
         public ICommand CloseCommand
         {
@@ -40,15 +56,19 @@ namespace TheDebtBook.ViewModels
 
         public void AddValueHandler()
         {
+            _debtBookViewModel.Debtors.ElementAt(_debtBookViewModel.CurrentIndex).DebtsList.Add(new Debts(Value));
+        }
 
+        public UpdateDebtViewModel(DebtBookViewModel model)
+        {
+            _debtBookViewModel = model;
+            CurrentDebtor = model.CurrentDebtor;
+
+            Debug.WriteLine($"{model.CurrentDebtor.FullName}");
         }
 
         public UpdateDebtViewModel()
         {
-            UpdateDebtList = new ObservableCollection<Debts>();
-            //UpdateDebtList.Add(new Debts(-55));
         }
-
-
     }
 }

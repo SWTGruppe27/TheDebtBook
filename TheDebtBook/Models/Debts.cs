@@ -16,8 +16,8 @@ namespace TheDebtBook
 
         public Debts(double value)
         {
-            _date = DateTime.Now.ToLongDateString();
-            _value = value;
+            Date = DateTime.Now.ToLongDateString();
+            Value = value;
         }
 
         public string Date

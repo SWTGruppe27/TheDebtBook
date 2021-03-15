@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
@@ -69,23 +70,21 @@ namespace TheDebtBook.ViewModels
 
         public void EditDebtHandler()
         {
-            UpdateDebtOwed updateDebtOwed = new UpdateDebtOwed();
+            UpdateDebtOwed updateDebtOwed = new UpdateDebtOwed(this);
 
             updateDebtOwed.ShowDialog();
-            _updateDebtViewModel.UpdateDebtList = Debtors.ElementAt(1).DebtsList;
         }
 
-        private UpdateDebtViewModel _updateDebtViewModel;
+
         public DebtBookViewModel()
         {
-            _updateDebtViewModel = new UpdateDebtViewModel();
-
             Debtors = new ObservableCollection<Debtor>();
-            Debtors.Add(new Debtor("Kathrine Alroee", 1000.4));
-            Debtors.Add(new Debtor("Simon Bjermand Kjær", -3000.5));
-            Debtors.Add(new Debtor("Simon Schou Jensen", -10000.7));
+            
+            Debtors.Add(new Debtor("Kathrine Alroee"));
+            Debtors.Add(new Debtor("Simon Bjermand Kjær"));
+            Debtors.Add(new Debtor("Simon Schou Jensen"));
 
-            Debtors.ElementAt(0).DebtsList.Add(new Debts(-500));
+            Debtors.ElementAt(0).DebtsList.Add(new Debts(-40));
         }
 
     }

@@ -18,10 +18,9 @@ namespace TheDebtBook.Models
         {
         }
 
-        public Debtor(string dFullName, double dMoneyOwed)
+        public Debtor(string dFullName)
         {
             fullName = dFullName;
-            moneyOwed = dMoneyOwed;
             DebtsList = new ObservableCollection<Debts>();
         }
 
@@ -40,8 +39,16 @@ namespace TheDebtBook.Models
         public double MoneyOwed
         {
             get
-            {
-                return moneyOwed;
+            { 
+                double sumOfValues = 0;
+
+                foreach (var debt in DebtsList)
+                {
+                    sumOfValues += debt.Value;
+                }
+
+                return sumOfValues;
+
             }
             set
             {
