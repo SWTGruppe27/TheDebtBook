@@ -36,19 +36,23 @@ namespace TheDebtBook.Models
             }
         }
 
+        public double CalculatorMoneyOwed()
+        {
+            double sumOfValues = 0;
+
+            foreach (var debt in DebtsList)
+            {
+                sumOfValues += debt.Value;
+            }
+
+            return sumOfValues;
+        }
+
         public double MoneyOwed
         {
             get
-            { 
-                double sumOfValues = 0;
-
-                foreach (var debt in DebtsList)
-                {
-                    sumOfValues += debt.Value;
-                }
-
-                return sumOfValues;
-
+            {
+                return CalculatorMoneyOwed();
             }
             set
             {

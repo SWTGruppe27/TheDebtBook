@@ -57,14 +57,15 @@ namespace TheDebtBook.ViewModels
         public void AddValueHandler()
         {
             _debtBookViewModel.Debtors.ElementAt(_debtBookViewModel.CurrentIndex).DebtsList.Add(new Debts(Value));
+            
+            //update MoneyOwed in CurrentDebtor
+            _debtBookViewModel.CurrentDebtor.MoneyOwed = _debtBookViewModel.CurrentDebtor.CalculatorMoneyOwed();
         }
 
         public UpdateDebtViewModel(DebtBookViewModel model)
         {
             _debtBookViewModel = model;
             CurrentDebtor = model.CurrentDebtor;
-
-            Debug.WriteLine($"{model.CurrentDebtor.FullName}");
         }
 
         public UpdateDebtViewModel()
