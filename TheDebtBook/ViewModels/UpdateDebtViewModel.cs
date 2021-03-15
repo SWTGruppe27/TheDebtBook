@@ -56,7 +56,7 @@ namespace TheDebtBook.ViewModels
 
         public void AddValueHandler()
         {
-            _debtBookViewModel.Debtors.ElementAt(_debtBookViewModel.CurrentIndex).DebtsList.Add(new Debts(Value));
+            _debtBookViewModel.Debtors.ElementAt(_debtBookViewModel.CurrentIndex).DebtsList.Add(new Debt(Value));
             
             //update MoneyOwed in CurrentDebtor
             _debtBookViewModel.CurrentDebtor.MoneyOwed = _debtBookViewModel.CurrentDebtor.CalculatorMoneyOwed();

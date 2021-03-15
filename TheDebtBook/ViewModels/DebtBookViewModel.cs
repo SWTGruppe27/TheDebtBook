@@ -84,7 +84,7 @@ namespace TheDebtBook.ViewModels
             Debtors.Add(new Debtor("Simon Bjermand Kjær"));
             Debtors.Add(new Debtor("Simon Schou Jensen"));
 
-            Debtors.ElementAt(0).DebtsList.Add(new Debts(-40));
+            Debtors.ElementAt(0).DebtsList.Add(new Debt(-40));
         }
 
     }

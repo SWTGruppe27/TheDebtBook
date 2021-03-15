@@ -5,16 +5,16 @@ using Prism.Mvvm;
 
 namespace TheDebtBook
 {
-    public class Debts :BindableBase
+    public class Debt : BindableBase
     {
         private string _date;
         private double _value;
 
-        public Debts()
+        public Debt()
         {
         }
 
-        public Debts(double value)
+        public Debt(double value)
         {
             Date = DateTime.Now.ToLongDateString();
             Value = value;
