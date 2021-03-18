@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:TheDebtBook.Views"
         xmlns:viewModels="clr-namespace:TheDebtBook.ViewModels"
         mc:Ignorable="d"
-        Title="Add New Debtor" Height="450" Width="800"
-        WindowStartupLocation="CenterOwner">
+        Title="Add New Debtor" Height="450" Width="400"
+        WindowStartupLocation="CenterOwner"
+        Background="LightBlue">
     <Window.DataContext>
         <viewModels:AddDebtorViewModel></viewModels:AddDebtorViewModel>
     </Window.DataContext>
@@ -23,17 +24,18 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Add debtor" Margin="5,0"></Label>
+        <Label Content="Add debtor" Margin="5,0" Style="{StaticResource StyleHeader}" ></Label>
 
-        <Label Grid.Row="1" Content="Full name: " Margin="5,0"></Label>
-        <TextBox Grid.Row="1" Grid.Column="1" MinWidth="200" Text="{Binding Path=AddNewDebtor.FullName}"></TextBox>
+        <Label Grid.Row="1" Content="Full name: " Margin="5,0" Style="{StaticResource StyleAddText}"/>
+        <TextBox Grid.Column="1" MinWidth="200" Text="{Binding Path=AddNewDebtor.FullName}"  Margin="5,2"
+                 Grid.Row="1" />
 
-        <Label Grid.Row="2" Content="Owed money: " Margin="5,0"></Label>
-        <TextBox Grid.Row="2" Grid.Column="1" MinWidth="200" Text="{Binding Path=AddNewDebtor.MoneyOwed}"></TextBox>
+        <Label Grid.Row="2" Content="Owed money: " Margin="5,0" Style="{StaticResource StyleAddText}"></Label>
+        <TextBox Grid.Row="2" Grid.Column="1" MinWidth="200" Text="{Binding Path=AddNewDebtor.MoneyOwed}" Margin="5,2"></TextBox>
 
 
-        <Button Grid.Row="3" Content="Ok" Width="35" Command="{Binding Path=OkCommand}"></Button>
-        <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Width="45" Command="{Binding Path=CancelCommand}"></Button>
+        <Button Grid.Row="3" Content="Ok" MinWidth="35" Command="{Binding Path=OkCommand}" Margin="55,10" ></Button>
+        <Button Grid.Row="3" Grid.Column="2" Content="Cancel" MinWidth="45" Command="{Binding Path=CancelCommand}" Margin="55,10"></Button>
 
     </Grid>
 </Window>

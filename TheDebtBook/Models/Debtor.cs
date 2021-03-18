@@ -11,16 +11,17 @@ namespace TheDebtBook.Models
     public class Debtor : BindableBase
     {
         public ObservableCollection<Debt> DebtsList { get; set; }
-        private string fullName;
-        private double moneyOwed;
+        private string _fullName;
+        private double _moneyOwed;
 
         public Debtor()
         {
         }
 
-        public Debtor(string dFullName)
+        public Debtor(string dFullName, double moneyOwed)
         {
-            fullName = dFullName;
+            _fullName = dFullName;
+            _moneyOwed = moneyOwed;
             DebtsList = new ObservableCollection<Debt>();
         }
 
@@ -28,17 +29,17 @@ namespace TheDebtBook.Models
         {
             get
             {
-                return fullName;
+                return _fullName;
             }
             set
             {
-                SetProperty(ref fullName,value);
+                SetProperty(ref _fullName,value);
             }
         }
 
         public double CalculatorMoneyOwed()
         {
-            double sumOfValues = 0;
+            double sumOfValues = _moneyOwed;
 
             foreach (var debt in DebtsList)
             {
@@ -56,7 +57,7 @@ namespace TheDebtBook.Models
             }
             set
             {
-                SetProperty(ref moneyOwed, value);
+                SetProperty(ref _moneyOwed, value);
             }
         }
     }

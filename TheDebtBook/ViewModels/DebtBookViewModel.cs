@@ -80,9 +80,9 @@ namespace TheDebtBook.ViewModels
         {
             Debtors = new ObservableCollection<Debtor>();
             
-            Debtors.Add(new Debtor("Kathrine Alroee"));
-            Debtors.Add(new Debtor("Simon Bjermand Kjær"));
-            Debtors.Add(new Debtor("Simon Schou Jensen"));
+            Debtors.Add(new Debtor("Kathrine Alroee", 0));
+            Debtors.Add(new Debtor("Simon Bjermand Kjær", 0));
+            Debtors.Add(new Debtor("Simon Schou Jensen", 1));
 
             Debtors.ElementAt(0).DebtsList.Add(new Debt(-40));
         }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using Prism.Commands;
@@ -58,8 +60,7 @@ namespace TheDebtBook.ViewModels
         public AddDebtorViewModel(DebtBookViewModel debtBookViewModel)
         {
             _debtBookViewModel = debtBookViewModel;
-            _addDebtor = new Debtor("");
-
+            _addDebtor = new Debtor("", 0);
         }
 
         public AddDebtorViewModel() { }

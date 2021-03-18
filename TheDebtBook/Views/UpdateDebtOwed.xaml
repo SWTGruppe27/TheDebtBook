@@ -7,7 +7,8 @@
         xmlns:viewModels="clr-namespace:TheDebtBook.ViewModels"
         xmlns:theDebtBook="clr-namespace:TheDebtBook"
         mc:Ignorable="d"
-        Title="Update Debt Owed" Height="450" Width="800">
+        Title="Update Debt Owed" Height="450" Width="400"
+        Background="DarkRed">
     <Window.DataContext>
         <viewModels:UpdateDebtViewModel>
         </viewModels:UpdateDebtViewModel>
@@ -23,12 +24,14 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Update debt" Margin="5,0"></Label>
+        <Label Content="Update debt" Margin="5,0" Style="{StaticResource StyleHeader}"></Label>
 
         <DataGrid Grid.Row="1"
                   IsSynchronizedWithCurrentItem="True"
                   ItemsSource="{Binding Path=CurrentDebtor.DebtsList}"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                  Style="{StaticResource StyleTextInBox}"
+                  Margin="10,2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Date" Binding="{Binding Path=Date}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Value" Binding="{Binding Path=Value}"></DataGridTextColumn>
@@ -41,7 +44,7 @@
         </Button>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox  Margin="5,5" Text="{Binding Path=Value}"></TextBox>
+            <TextBox  Margin="5,5" Text="{Binding Path=Value}" Style="{StaticResource StyleAddText}"></TextBox>
             <Button Margin="5,5 " Content="Add value" Command="{Binding Path=AddValueCommand}"></Button>
         </StackPanel>
 

@@ -17,11 +17,11 @@ namespace TheDebtBook.ViewModels
     {
         public Debtor CurrentDebtor { get; private set; }
         private DebtBookViewModel _debtBookViewModel;
-        private int _value;
+        private double _value;
         private ICommand _closeCommand;
         private ICommand _addValueCommand;
 
-        public int Value
+        public double Value
         {
             get
             {

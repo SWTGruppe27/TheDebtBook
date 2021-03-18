@@ -5,9 +5,22 @@
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            
-
-
+            <Style x:Key="StyleHeader">
+                <Setter Property="Control.FontSize" Value="20pt"></Setter>
+                <Setter Property="Control.FontWeight" Value="ExtraBold"></Setter>
+            </Style>
+            <Style x:Key="StyleTextInBox">
+                <Setter Property="Control.FontSize" Value="12pt"></Setter>
+                <Setter Property="Control.FontWeight" Value="Bold"></Setter>
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="12pt"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+            <Style x:Key="StyleAddText">
+                <Setter Property="Control.FontSize" Value="12pt"></Setter>
+                <Setter Property="Control.FontWeight" Value="Bold"></Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

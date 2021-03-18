@@ -7,7 +7,8 @@
         xmlns:viewModels="clr-namespace:TheDebtBook.ViewModels"
         xmlns:TheDebtBook="clr-namespace:TheDebtBook.Models"
         mc:Ignorable="d"
-        Title="The Debt Book" Height="450" Width="800">
+        Title="The Debt Book" Height="450" Width="400"
+        Background="LightGray">
     <Window.DataContext>
         <viewModels:DebtBookViewModel/>
     </Window.DataContext>
@@ -21,21 +22,23 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Debtors" Margin="5,0"></Label>
+        <Label Content="The Debt Book" Margin="5,0" Style="{StaticResource StyleHeader}"></Label>
 
         <DataGrid Grid.Row="1"
                   IsSynchronizedWithCurrentItem="True"
                   ItemsSource="{Binding Path=Debtors}"
                   SelectedItem="{Binding Path=CurrentDebtor}"
                   SelectedIndex="{Binding Path=CurrentIndex}" 
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                  Margin="10,0"
+                  Style="{StaticResource StyleTextInBox}" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.InputBindings>
                 <MouseBinding MouseAction="LeftDoubleClick" 
                               Command="{Binding Path=EditDebtCommand}">
                 </MouseBinding>
             </DataGrid.InputBindings>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Full name" Binding="{Binding Path=FullName}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="Full name" Binding="{Binding Path=FullName}" IsReadOnly="True" ></DataGridTextColumn>
                 <DataGridTextColumn Header="Debt" Binding="{Binding Path=MoneyOwed}" IsReadOnly="True"></DataGridTextColumn>
             </DataGrid.Columns>
 
