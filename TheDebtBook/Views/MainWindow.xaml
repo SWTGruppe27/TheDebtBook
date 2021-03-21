@@ -12,7 +12,23 @@
     <Window.DataContext>
         <viewModels:DebtBookViewModel/>
     </Window.DataContext>
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Add new debtor" Command="{Binding Path=AddNewCommand}"></MenuItem>
+                <MenuItem Header="_Open" Command="{Binding Path=OpenCommand}"></MenuItem>
+                <MenuItem Header="_Save As" Command="{Binding Path=SaveAsCommand}"></MenuItem>
+                <MenuItem Header="_Exit" Command="{Binding Path=ExitCommand}"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
@@ -51,5 +67,6 @@
                 Command="{Binding Path=AddNewCommand}">
         </Button>
 
-    </Grid>
+        </Grid>
+        </Grid>
 </Window>
