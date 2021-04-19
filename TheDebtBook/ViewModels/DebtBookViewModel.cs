@@ -124,6 +124,8 @@ namespace TheDebtBook.ViewModels
 
         void OpenHandler()
         {
+            Debtors.Clear();
+
             string filePath = null;
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
